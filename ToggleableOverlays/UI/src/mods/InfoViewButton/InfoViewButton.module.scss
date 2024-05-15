@@ -1,0 +1,21 @@
+.button {
+  background-color: var(--panelColorNormal);
+  backdrop-filter: var(--panelBlur);
+  color: var(--accentColorNormal);
+  border-top-left-radius: var(--panelRadius);
+  border-top-right-radius: var(--panelRadius);
+  border-bottom-left-radius: var(--panelRadius);
+  border-bottom-right-radius: var(--panelRadius);
+  margin-top: 5rem;
+  padding: 5rem;
+
+  z-index: 9999;
+}
+
+.button:hover {
+  background-color: var(--panelColorDark);
+}
+
+.button:active {
+  filter: brightness(150%);
+}

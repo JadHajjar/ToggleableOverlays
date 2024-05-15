@@ -1,0 +1,39 @@
+﻿<Publish>
+	<!--Id must be set in order to update existed mod. it is not required for publishing mod for the first time-->
+	<ModId Value="" />
+	<!--Name of the mod to display to players-->
+	<DisplayName Value="Toggle Overlays" />
+	<!--Short description of the mod-->
+	<ShortDescription Value="Disable overlays when selecting assets, in addition to more quality of life features." />
+	<!--LongDescription Value="This is a long description" /-->
+	<LongDescription>
+# Toggle Overlays and Info-Views
+
+Tired of closing info-views every time you select an asset? This mod is for you!
+
+## Features
+* Selecting assets no longer opens their respective info-views.
+* Info-view overlay color is now dark grey instead of white.
+* Clicking the info-view button (or hotkey) while having an asset selected will open the asset's info-view automatically. (optional, ON by default)
+* Switching to another asset automatically enables that asset's info-view. (optional, ON by default)
+* Switching to another asset will close the active info-view if does not match the asset. (optional, OFF by default)
+
+This is a very simple mod, but it will leave you wondering how on earth have you been playing the game without it. 
+	</LongDescription>
+	<!--Thumbnail-->
+	<Thumbnail Value="Properties/Thumbnail.png" />
+	<!--Screenshot, can be set multiple times-->
+	<Screenshot Value="Properties/Screenshot_01.png" />
+	<Screenshot Value="Properties/Screenshot_02.png" />
+	<Screenshot Value="Properties/Screenshot_03.png" />
+	<Screenshot Value="Properties/Screenshot_04.png" />
+	<!--Tag, can be set multiple times-->
+	<ForumLink Value="https://forum.paradoxplaza.com/forum/threads/toggle-overlays.1677660/" />
+	<ModVersion Value="1.0.0" />
+	<!--Recommended version of the base game to use the mod-->
+	<GameVersion Value="1.1.*" />
+	<!--Dependency for the mod, can be set multiple times-->
+	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon-->
+	<ExternalLink Type="discord" Url="https://discord.gg/E4k8ZEtRxd" />
+	<ExternalLink Type="github" Url="https://github.com/JadHajjar/ToggleableOverlays" />
+</Publish>
