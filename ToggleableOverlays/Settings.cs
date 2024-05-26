@@ -13,22 +13,28 @@ namespace ToggleableOverlays
 	[SettingsUIShowGroupName("Settings")]
 	public class Setting : ModSetting
 	{
+		private bool _closeInfoViewOnAssetChange;
+		private bool _automaticallyOpenInfoView = true;
+		private bool _automaticallySwitchInfoViewIfOpen = true;
+
 		public Setting(IMod mod) : base(mod)
 		{
 
 		}
 
-		[SettingsUIHidden]
-		public bool DefaultBlock { get; set; }
-
 		[SettingsUISection("Main", "Settings")]
-		public bool CloseInfoViewOnAssetChange { get; set; }
+		public bool OpenInfoViewWhenSelectingAsset { get; set; }
 
-		[SettingsUISection("Main", "Settings")]
-		public bool AutomaticallyOpenInfoView { get; set; } = true;
+		[SettingsUISection("Main", "Settings"), SettingsUIDisableByCondition(typeof(Setting), nameof(OpenInfoViewWhenSelectingAsset))]
+		public bool CloseInfoViewOnAssetChange { get => _closeInfoViewOnAssetChange && !OpenInfoViewWhenSelectingAsset; set => _closeInfoViewOnAssetChange = value; }
 
-		[SettingsUISection("Main", "Settings"), SettingsUIDisableByCondition(typeof(Setting), nameof(CloseInfoViewOnAssetChange))]
-		public bool AutomaticallySwitchInfoViewIfOpen { get; set; } = true;
+		[SettingsUISection("Main", "Settings"), SettingsUIDisableByCondition(typeof(Setting), nameof(OpenInfoViewWhenSelectingAsset))]
+		public bool AutomaticallyOpenInfoView { get => _automaticallyOpenInfoView && !OpenInfoViewWhenSelectingAsset; set => _automaticallyOpenInfoView = value; }
+
+		[SettingsUISection("Main", "Settings"), SettingsUIDisableByCondition(typeof(Setting), nameof(DisableAutomaticallySwitchInfoViewIfOpen))]
+		public bool AutomaticallySwitchInfoViewIfOpen { get => _automaticallySwitchInfoViewIfOpen && !DisableAutomaticallySwitchInfoViewIfOpen; set => _automaticallySwitchInfoViewIfOpen = value; }
+		
+		public bool DisableAutomaticallySwitchInfoViewIfOpen => OpenInfoViewWhenSelectingAsset || CloseInfoViewOnAssetChange;
 
 		public override void SetDefaults()
 		{
@@ -52,6 +58,9 @@ namespace ToggleableOverlays
 				{ m_Setting.GetOptionTabLocaleID("Main"), "Main" },
 
 				{ m_Setting.GetOptionGroupLocaleID("Settings"), "Settings" },
+
+				{ m_Setting.GetOptionLabelLocaleID(nameof(Setting.OpenInfoViewWhenSelectingAsset)), "Open the info-view of an asset when selecting it" },
+				{ m_Setting.GetOptionDescLocaleID(nameof(Setting.OpenInfoViewWhenSelectingAsset)), $"This is the default vanilla behavior, whenever you select an asset, its infoview will automatically be opened." },
 
 				{ m_Setting.GetOptionLabelLocaleID(nameof(Setting.CloseInfoViewOnAssetChange)), "Close info-view overlay when selecting a different asset" },
 				{ m_Setting.GetOptionDescLocaleID(nameof(Setting.CloseInfoViewOnAssetChange)), $"When selecting an asset that does not match your active info-view, the info-view will automatically close." },

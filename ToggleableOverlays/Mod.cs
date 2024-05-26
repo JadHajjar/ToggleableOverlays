@@ -23,9 +23,9 @@ namespace ToggleableOverlays
 			Settings = new Setting(this);
 			Settings.RegisterInOptionsUI();
 			GameManager.instance.localizationManager.AddSource("en-US", new LocaleEN(Settings));
-			AssetDatabase.global.LoadSettings(nameof(ToggleableOverlays), Settings, new Setting(this) { DefaultBlock = true });
+			AssetDatabase.global.LoadSettings(nameof(ToggleableOverlays), Settings, new Setting(this));
 
-			_harmony = new Harmony($"{nameof(ToggleableOverlays)}.{nameof(Mod)}");
+			_harmony = new Harmony($"com.TDW.{nameof(ToggleableOverlays)}");
 			_harmony.PatchAll(typeof(Mod).Assembly);
 
 			updateSystem.UpdateAt<ToggleableOverlaysUISystem>(SystemUpdatePhase.UIUpdate);
@@ -34,7 +34,8 @@ namespace ToggleableOverlays
 		public void OnDispose()
 		{
 			Log.Info(nameof(OnDispose));
-			_harmony?.UnpatchAll($"{nameof(ToggleableOverlays)}.{nameof(Mod)}");
+
+			_harmony?.UnpatchAll($"com.TDW.{nameof(ToggleableOverlays)}");
 		}
 	}
 }

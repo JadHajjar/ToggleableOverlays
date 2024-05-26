@@ -1,0 +1,28 @@
+[
+  {
+    "Stable": true,
+    "Version": "1.0.2",
+    "Date": "2024-05-18",
+    "ChangeGroups": [
+      {
+        "Name": "Changes",
+        "Changes": [
+          "Added an option to disable the mod's feature to not open info-views when selecting assets. Essentially reverting back to the vanilla behavior."
+        ]
+      }
+    ]
+  },
+  {
+    "Stable": true,
+    "Version": "1.0.1",
+    "Date": "2024-05-16",
+    "ChangeGroups": [
+      {
+        "Name": "Changes",
+        "Changes": [
+          "Improved some info-views' dark background blend."
+        ]
+      }
+    ]
+  }
+]

@@ -20,19 +20,21 @@ namespace ToggleableOverlays
 		{
 			if (Mod.Settings.CloseInfoViewOnAssetChange)
 			{
-				var infoview = GetInfoViewPrefab(prefab);
+				var infoView = GetInfoViewPrefab(prefab);
 
-				if (_toolSystem.infoview != null && infoview != null && _toolSystem.infoview != infoview)
+				if (_toolSystem.infoview != null && infoView != null && _toolSystem.infoview != infoView)
 				{
 					_toolSystem.infoview = null;
 				}
+
+				return false;
 			}
 			else if (Mod.Settings.AutomaticallySwitchInfoViewIfOpen && _toolSystem.infoview != null)
 			{
 				return true;
 			}
 
-			return false;
+			return Mod.Settings.OpenInfoViewWhenSelectingAsset;
 		}
 
 		public static InfoviewPrefab GetInfoViewPrefab(Entity prefab)
