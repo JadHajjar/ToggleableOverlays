@@ -1,6 +1,19 @@
 [
   {
     "Stable": true,
+    "Version": "1.0.3",
+    "Date": "2024-06-16",
+    "ChangeGroups": [
+      {
+        "Name": "Changes",
+        "Changes": [
+          "Improved night-time visibility by increasing the brightness automatically."
+        ]
+      }
+    ]
+  },
+  {
+    "Stable": true,
     "Version": "1.0.2",
     "Date": "2024-05-18",
     "ChangeGroups": [

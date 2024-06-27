@@ -29,6 +29,7 @@ namespace ToggleableOverlays
 			_harmony.PatchAll(typeof(Mod).Assembly);
 
 			updateSystem.UpdateAt<ToggleableOverlaysUISystem>(SystemUpdatePhase.UIUpdate);
+			updateSystem.UpdateAt<TimeOfDaySystem>(SystemUpdatePhase.GameSimulation);
 		}
 
 		public void OnDispose()

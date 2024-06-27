@@ -1,0 +1,7 @@
+{
+  "ModName": "Toggle Overlays",
+  "ThumbnailUrl": "https://imgur.com/1nuRoYm.png",
+  "PublishConfigurationFile": "Properties\\PublishConfiguration.xml",
+  "ChangelogFile": "Changelog.json",
+  "Color": "29, 58, 105"
+}

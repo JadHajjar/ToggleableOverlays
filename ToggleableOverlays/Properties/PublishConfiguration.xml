@@ -27,12 +27,12 @@ This is a very simple mod, but it will leave you wondering how on earth have you
   <Screenshot Value="Properties/Screenshot_06.png" />
   <Tag Value="Code Mod" />
   <ForumLink Value="https://forum.paradoxplaza.com/forum/threads/toggle-overlays.1677660/" />
-  <ModVersion Value="1.0.2" />
+  <ModVersion Value="1.0.3" />
   <GameVersion Value="1.1.*" />
   <ChangeLog>
-# v1.0.2
+# v1.0.3
 ## Changes
-* Added an option to disable the mod's feature to not open info-views when selecting assets. Essentially reverting back to the vanilla behavior.
+* Improved night-time visibility by increasing the brightness automatically.
 </ChangeLog>
   <ExternalLink Type="discord" Url="https://discord.gg/E4k8ZEtRxd" />
   <ExternalLink Type="github" Url="https://github.com/JadHajjar/ToggleableOverlays" />
