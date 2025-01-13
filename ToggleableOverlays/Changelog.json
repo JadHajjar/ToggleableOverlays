@@ -1,6 +1,40 @@
 [
   {
     "Stable": true,
+    "Version": "1.1.0",
+    "Date": "2025-01-13",
+    "ChangeGroups": [
+      {
+        "Name": "New Infoview Filter Toggle",
+        "Changes": [
+          "Added a new button at the top of the infoview panel that lets you toggle the filter that infoviews have on the map without closing the infoview completely.",
+          "Added a new hot-key to quickly toggle the infoviews' filter. Default hot-key is Ctrl+T"
+        ]
+      },
+      {
+        "Name": "New Color Options",
+        "Changes": [
+          "Added a new colorblind option to automatically convert all infoviews' colors into ones that match the selected colorblind condition's range.",
+          "Added a new option that makes the background color a light grey during daytime, as opposed to a dark grey all the time."
+        ]
+      }
+    ]
+  },
+  {
+    "Stable": true,
+    "Version": "1.0.4",
+    "Date": "2024-06-16",
+    "ChangeGroups": [
+      {
+        "Name": "Hotfix",
+        "Changes": [
+          "Compatibility with patch 1.2.0f1."
+        ]
+      }
+    ]
+  },
+  {
+    "Stable": true,
     "Version": "1.0.3",
     "Date": "2024-06-16",
     "ChangeGroups": [

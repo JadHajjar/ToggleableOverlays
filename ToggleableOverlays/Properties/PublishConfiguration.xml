@@ -27,14 +27,19 @@ This is a very simple mod, but it will leave you wondering how on earth have you
   <Screenshot Value="Properties/Screenshot_06.png" />
   <Tag Value="Code Mod" />
   <ForumLink Value="https://forum.paradoxplaza.com/forum/threads/toggle-overlays.1677660/" />
-  <ModVersion Value="1.0.3" />
-  <GameVersion Value="1.1.*" />
+  <ModVersion Value="1.1.0" />
+  <GameVersion Value="1.2.*" />
   <ChangeLog>
-# v1.0.3
-## Changes
-* Improved night-time visibility by increasing the brightness automatically.
+# v1.1.0
+## New Infoview Filter Toggle
+* Added a new button at the top of the infoview panel that lets you toggle the filter that infoviews have on the map without closing the infoview completely.
+* Added a new hot-key to quickly toggle the infoviews' filter. Default hot-key is Ctrl+T
+
+## New Color Options
+* Added a new colorblind option to automatically convert all infoviews' colors into ones that match the selected colorblind condition's range.
+* Added a new option that makes the background color a light grey during daytime, as opposed to a dark grey all the time.
 </ChangeLog>
   <ExternalLink Type="discord" Url="https://discord.gg/E4k8ZEtRxd" />
   <ExternalLink Type="github" Url="https://github.com/JadHajjar/ToggleableOverlays" />
-  <ExternalLink Type="buymeacoffee" Url="https://www.buymeacoffee.com/tdwsvillage" />
+  <ExternalLink Type="patreon" Url="https://www.patreon.com/tdwsvillage" />
 </Publish>

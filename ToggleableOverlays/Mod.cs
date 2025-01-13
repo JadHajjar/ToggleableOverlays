@@ -15,6 +15,7 @@ namespace ToggleableOverlays
 
 		public static ILog Log { get; } = LogManager.GetLogger(nameof(ToggleableOverlays)).SetShowsErrorsInUI(false);
 		public static Setting Settings { get; private set; }
+		public static string Id { get; } = nameof(ToggleableOverlays);
 
 		public void OnLoad(UpdateSystem updateSystem)
 		{
@@ -22,14 +23,17 @@ namespace ToggleableOverlays
 
 			Settings = new Setting(this);
 			Settings.RegisterInOptionsUI();
+			Settings.RegisterKeyBindings();
+
 			GameManager.instance.localizationManager.AddSource("en-US", new LocaleEN(Settings));
+			
 			AssetDatabase.global.LoadSettings(nameof(ToggleableOverlays), Settings, new Setting(this));
 
 			_harmony = new Harmony($"com.TDW.{nameof(ToggleableOverlays)}");
 			_harmony.PatchAll(typeof(Mod).Assembly);
 
 			updateSystem.UpdateAt<ToggleableOverlaysUISystem>(SystemUpdatePhase.UIUpdate);
-			updateSystem.UpdateAt<TimeOfDaySystem>(SystemUpdatePhase.GameSimulation);
+			updateSystem.UpdateAt<InfoViewColorSystem>(SystemUpdatePhase.GameSimulation);
 		}
 
 		public void OnDispose()
