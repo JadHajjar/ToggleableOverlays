@@ -35,6 +35,9 @@ namespace ToggleableOverlays
 		[SettingsUISection("Main", "Settings"), SettingsUIDisableByCondition(typeof(Setting), nameof(DisableAutomaticallySwitchInfoViewIfOpen))]
 		public bool AutomaticallySwitchInfoViewIfOpen { get => _automaticallySwitchInfoViewIfOpen && !DisableAutomaticallySwitchInfoViewIfOpen; set => _automaticallySwitchInfoViewIfOpen = value; }
 
+		[SettingsUISection("Main", "Settings")]
+		public bool HideUIToggle { get; set; }
+
 		[SettingsUISection("Main", "Color")]
 		public bool UseDaytimeForDarkMode { get; set; }
 
@@ -87,6 +90,9 @@ namespace ToggleableOverlays
 
 				{ m_Setting.GetOptionLabelLocaleID(nameof(Setting.UseDaytimeForDarkMode)), "Use in-game time for for light or dark mode colors" },
 				{ m_Setting.GetOptionDescLocaleID(nameof(Setting.UseDaytimeForDarkMode)), $"Makes the base color of info-views a lighter grey when it's daytime in your city." },
+
+				{ m_Setting.GetOptionLabelLocaleID(nameof(Setting.HideUIToggle)), "Remove toggle button from infoview panel" },
+				{ m_Setting.GetOptionDescLocaleID(nameof(Setting.HideUIToggle)), $"Hides the button added by Toggleable Overlays from the infoviews panel." },
 
 				{ m_Setting.GetOptionLabelLocaleID(nameof(Setting.ColorblindMode)), "Color-blind Mode" },
 				{ m_Setting.GetOptionDescLocaleID(nameof(Setting.ColorblindMode)), $"Automatically change infoviews' colors to match the selected color-blind spectrum." },

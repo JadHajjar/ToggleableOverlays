@@ -23,6 +23,7 @@ namespace ToggleableOverlays
 			toggleKeyBinding.shouldBeEnabled = true;
 
 			CreateBinding("InfoViewsEnabled", () => Shader.GetGlobalInt("colossal_InfoviewOn") == 1);
+			CreateBinding("HideUIToggle", () => Mod.Settings.HideUIToggle);
 			CreateTrigger<bool>("SetInfoViewsEnabled", SetInfoViewsToggle);
 			CreateTrigger("InfoViewOpened", OpenInfoView);
 		}

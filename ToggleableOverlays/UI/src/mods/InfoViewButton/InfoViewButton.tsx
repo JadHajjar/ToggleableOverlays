@@ -8,12 +8,14 @@ import classNames from "classnames";
 import mod from "../../../mod.json";
 
 const InfoViewsEnabled$ = bindValue<boolean>(mod.id, "InfoViewsEnabled");
+const HideUIToggle$ = bindValue<boolean>(mod.id, "HideUIToggle");
 const activeInfoview$ = bindValue<any>("infoviews", "activeInfoview");
 
 export const InfoViewButton: ModuleRegistryExtend = (Component) => {
   return (props) => {
     const { children, ...otherProps } = props || {};
     const InfoViewsEnabled = useValue(InfoViewsEnabled$);
+    const HideUIToggle = useValue(HideUIToggle$);
     const activeInfoview = useValue(activeInfoview$);
     const [infoviewOpened, setInfoviewOpened] = useState(false);
 
@@ -21,10 +23,10 @@ export const InfoViewButton: ModuleRegistryExtend = (Component) => {
       setInfoviewOpened(true);
       trigger("ToggleableOverlays", "InfoViewOpened");
     }
-
+    ``
     return (
       <>
-        {activeInfoview && (
+        {activeInfoview && !HideUIToggle && (
           <Button
             variant="icon"
             className={classNames(style.button, InfoViewsEnabled && style.selected)}
