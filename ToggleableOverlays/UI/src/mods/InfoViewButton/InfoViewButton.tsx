@@ -6,6 +6,7 @@ import style from "./InfoViewButton.module.scss";
 import stack from "images/stack.svg";
 import classNames from "classnames";
 import mod from "../../../mod.json";
+import { FocusDisabled } from "cs2/input";
 
 const InfoViewsEnabled$ = bindValue<boolean>(mod.id, "InfoViewsEnabled");
 const HideUIToggle$ = bindValue<boolean>(mod.id, "HideUIToggle");
@@ -23,21 +24,22 @@ export const InfoViewButton: ModuleRegistryExtend = (Component) => {
       setInfoviewOpened(true);
       trigger("ToggleableOverlays", "InfoViewOpened");
     }
-    ``
+    
     return (
       <>
-        {activeInfoview && !HideUIToggle && (
-          <Button
-            variant="icon"
-            className={classNames(style.button, InfoViewsEnabled && style.selected)}
-            onSelect={() => trigger(mod.id, "SetInfoViewsEnabled", !InfoViewsEnabled)}
-          >
-            <div>
-              <img style={{ maskImage: `url(${stack})` }} />
-              Toggle Infoview Filter
-            </div>
-            <div className={style.checkbox}>{InfoViewsEnabled && <img style={{ maskImage: `url(Media/Glyphs/Checkmark.svg)` }} />}</div>
-          </Button>
+            {activeInfoview && !HideUIToggle && (<FocusDisabled>
+              <Button
+                variant="icon"
+                className={classNames(style.button, InfoViewsEnabled && style.selected)}
+                onSelect={() => trigger(mod.id, "SetInfoViewsEnabled", !InfoViewsEnabled)}
+              >
+                <div>
+                  <img style={{ maskImage: `url(${stack})` }} />
+                  Toggle Infoview Filter
+                </div>
+                <div className={style.checkbox}>{InfoViewsEnabled && <img style={{ maskImage: `url(Media/Glyphs/Checkmark.svg)` }} />}</div>
+                </Button>
+            </FocusDisabled>
         )}
         <Component {...otherProps}>{children}</Component>
       </>
